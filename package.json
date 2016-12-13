@@ -1,0 +1,28 @@
+{
+  "name": "array-ext-exercise",
+  "version": "1.0.0",
+  "description": "Extending the Array prototype in JS",
+  "main": "aee.js",
+  "scripts": {
+    "test": "make test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/islas27/array-ext-exercise.git"
+  },
+  "keywords": [
+    "exercise",
+    "learning"
+  ],
+  "author": "Jonathan Islas",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/islas27/array-ext-exercise/issues"
+  },
+  "homepage": "https://github.com/islas27/array-ext-exercise#readme",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.2.0",
+    "sinon": "^1.17.6"
+  }
+}
