@@ -24,6 +24,8 @@ A set of methods that extend the Array prototype in JavaScript
 The each method will receive a callback function to execute on each element of the array.
 Example:
 ```JavaScript
+people = [ {name: 'Pedro', age: 19 }, {name: 'Juan', age: 15 },{name: 'Pablo', age: 16 },
+      {name: 'Pancho', age: 20 },{name: 'Topo', age: 18 },{name: 'Jonathan', age: 24} ];
 var outputAge = [];
 people.each(function (element) {
   outputAge.push(element.age);
