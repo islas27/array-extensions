@@ -1,4 +1,4 @@
-# Array extension exercise
+# Array extension exercise [![Build Status](https://travis-ci.org/islas27/array-ext-exercise.svg?branch=dev)](https://travis-ci.org/islas27/array-ext-exercise)
 A set of methods that extend the Array prototype in JavaScript
 
 ---

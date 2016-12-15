@@ -1,5 +1,6 @@
 Array.prototype.each = function (callback) {
-  for (var index = 0; index < this.length; index += 1) {
+  const len = this.length
+  for (var index = 0; index < len; index += 1) {
     callback(this[index], index)
   }
   return this

@@ -26,11 +26,11 @@ people.each(function (element, index) {
 
 // Example 3
 
-var myFunc = function (element, i) {
+function myFunc (element, i) {
   console.log((i + 1) + ': ' + element.name)
 }
 
-people.each(myFunc(e, i))
+people.each(myFunc)
 // Console output:
 // 1: Pedro
 // ...
