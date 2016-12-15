@@ -10,20 +10,20 @@ The each method will receive a callback function to execute on each element of t
 
 **Inputs**: `callback`: a function that has two arguments: `element` & `index`
 
-**Outputs**: itself, so its capable of chainable actions.
+**Outputs**: the original Array, so its capable of chainable actions.
 
 **Example**: [each.js](examples/each.js)
 
 ----
 
-### where
-**Sintax**: `myArray.()`
+### where(spec)
+**Sintax**: `myArray.where(spec)`
 
-**Inputs**:
+**Inputs**: `spec`: a function that defines if an element is included or not in the new array, it takes two arguments: `element` & `index`.
 
-**Outputs**:
+**Outputs**: Array: composed of the selected elements through `spec`
 
-**Example**: [.js](examples/.js)
+**Example**: [where.js](examples/where.js)
 
 ----
 
