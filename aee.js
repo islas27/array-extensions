@@ -10,7 +10,7 @@ Array.prototype.where = function (spec) {
   const len = this.length
   var newArray = []
   for (var i = 0; i < len; i += 1) {
-    if (spec(this[i])) newArray.push(this[i])
+    if (spec(this[i], i)) newArray.push(this[i])
   }
   return newArray
 }
