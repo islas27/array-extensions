@@ -1,3 +1,4 @@
+require('../aee.js')
 var outputAge = []
 const people = [
   {name: 'Pedro', age: 19},
