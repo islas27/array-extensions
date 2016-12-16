@@ -9,11 +9,11 @@ const people = [
   { 'name': 'Jonathan', 'age': 24 }
 ]
 
-console.log(people.any((person, index) => person.name === 'Topo'))
+console.log(people.any(person => person.name === 'Topo'))
 // Output:
 // true
 
-function spec (person, index) {
+function spec (person) {
   return person.age === 80
 }
 

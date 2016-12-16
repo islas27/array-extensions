@@ -17,14 +17,9 @@ Array.prototype.where = function (spec) {
 
 Array.prototype.any = function (spec) {
   const len = this.length
-  if (typeof spec !== 'function') {
-    searchedValue = spec
-    spec = function (element, index) {
-      return element === searchedValue
-    }
-  }
+  var searchSpec = (typeof spec === 'function') ? spec : value => value === spec
   for (var i = 0; i < len; i++) {
-    if (spec(this[i], i)) return true
+    if (searchSpec(this[i], i)) return true
   }
   return false
 }
