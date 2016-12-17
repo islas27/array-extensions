@@ -14,3 +14,12 @@ Array.prototype.where = function (spec) {
   }
   return result
 }
+
+Array.prototype.any = function (spec) {
+  const len = this.length
+  var searchSpec = (typeof spec === 'function') ? spec : value => value === spec
+  for (var i = 0; i < len; i++) {
+    if (searchSpec(this[i], i)) return true
+  }
+  return false
+}
