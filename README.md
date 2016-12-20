@@ -40,14 +40,14 @@ The each method will receive a callback function to execute on each element of t
 
 ----
 
-### select
-**Sintax**: `myArray.()`
+### select(spec)
+**Sintax**: `myArray.select(spec)`
 
-**Inputs**:
+**Inputs**: `spec`: a function that takes `element` & `index` as arguments, and returns the desired part of the element to form a new array
 
-**Outputs**:
+**Outputs**: Array, composed of the selected members of the elements that form the original array. In case the `spec()` function does not match any part of the element, it will return an array of `undefined`. If no function is sent, it will return the original array.
 
-**Example**: [.js](examples/.js)
+**Example**: [select.js](examples/select.js)
 
 ----
 
