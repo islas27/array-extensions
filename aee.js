@@ -1,7 +1,7 @@
 Array.prototype.each = function (callback) {
   const len = this.length
-  for (let index = 0; index < len; index += 1) {
-    callback(this[index], index)
+  for (let i = 0; i < len; i += 1) {
+    callback(this[i], i)
   }
   return this
 }
@@ -29,7 +29,7 @@ Array.prototype.select = function (spec) {
   let result = []
   if (typeof spec !== 'function') return this
   for (let i = 0; i < len; i += 1) {
-    result.push(spec(this[i]))
+    result.push(spec(this[i], i))
   }
   return result
 }
