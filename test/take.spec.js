@@ -41,4 +41,11 @@ describe('#take', () => {
     expect(resultWhenBigger).to.have.length(data.children.length)
     expect(resultWhenBigger).to.eql(data.children)
   })
+
+  it('returns the correct elements of the array when the spec uses the index', () => {
+    let callbackSpy = sinon.spy((element, index) => index % 2 === 0)
+    const result = data.numbers.take(4, callbackSpy)
+    expect(result).to.have.length(4)
+    expect(result).to.eql([0, 2, 4, 6])
+  })
 })
