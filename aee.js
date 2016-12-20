@@ -30,7 +30,7 @@ Array.prototype.take = function (howMany, spec) {
   const len = this.length
   const searchSpec = (typeof spec === 'function') ? spec : () => true
   for (let i = 0; i < len; i += 1) {
-    if (searchSpec(this[i])) result.push(this[i])
+    if (searchSpec(this[i], i)) result.push(this[i])
     if (result.length === howMany) break
   }
   return result
