@@ -25,12 +25,12 @@ Array.prototype.any = function (spec) {
 }
 
 Array.prototype.take = function (howMany, spec) {
-  let result = []
+  const result = []
   if (howMany <= 0) return result
+  if (typeof spec !== 'function') return this.slice(0, howMany)
   const len = this.length
-  const searchSpec = (typeof spec === 'function') ? spec : () => true
   for (let i = 0; i < len; i += 1) {
-    if (searchSpec(this[i], i)) result.push(this[i])
+    if (spec(this[i], i)) result.push(this[i])
     if (result.length === howMany) break
   }
   return result
