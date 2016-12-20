@@ -23,3 +23,15 @@ Array.prototype.any = function (spec) {
   }
   return false
 }
+
+Array.prototype.take = function (howMany, spec) {
+  let result = []
+  if (howMany <= 0) return result
+  const len = this.length
+  const searchSpec = (typeof spec === 'function') ? spec : () => true
+  for (let i = 0; i < len; i += 1) {
+    if (searchSpec(this[i])) result.push(this[i])
+    if (result.length === howMany) break
+  }
+  return result
+}

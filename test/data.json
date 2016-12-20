@@ -14,5 +14,29 @@
       {"name": "juan", "age": 23, "skills": ["PHP", "C#", "Drink tea"]  },
       {"name": "pablo", "age": 26, "skills": ["RoR", "JS", "Sports"] },
       {"name": "Jonathan", "age": 24, "skills": ["JS", "HTML/CSS", "Gaming"] }
-    ]
+    ],
+  "children": [
+    {"name": "ana", "sex": "f"},
+    {"name": "fosto", "sex": "m"},
+    {"name": "jane", "sex": "f"},
+    {"name": "yadi", "sex": "f"},
+    {"name": "lili", "sex": "f"},
+    {"name": "bany", "sex": "m"},
+    {"name": "rod", "sex": "m"},
+    {"name": "auro", "sex": "f"},
+    {"name": "martin", "sex": "m"}
+  ],
+  "femaleChildren": [
+    {"name": "ana", "sex": "f"},
+    {"name": "jane", "sex": "f"},
+    {"name": "yadi", "sex": "f"},
+    {"name": "lili", "sex": "f"},
+    {"name": "auro", "sex": "f"}
+  ],
+  "maleChildren": [
+    {"name": "fosto", "sex": "m"},
+    {"name": "bany", "sex": "m"},
+    {"name": "rod", "sex": "m"},
+    {"name": "martin", "sex": "m"}
+  ]
 }
