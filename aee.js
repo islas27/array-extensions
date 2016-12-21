@@ -33,3 +33,10 @@ Array.prototype.select = function (spec) {
   }
   return result
 }
+
+Array.prototype.skip = function (howMany) {
+  const len = this.length
+  if (howMany <= 0) return this
+  if (howMany >= len) return []
+  return this.slice(howMany - len)
+}
