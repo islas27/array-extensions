@@ -78,7 +78,7 @@ The each method will receive a callback function to execute on each element of t
 
 **Inputs**: `spec`: a function that takes `element` & `index` as arguments, and returns true when the element matches the desired criteria.
 
-**Outputs**: One element of the array if something matches spec(), or the first element if no spec() is used. It will return null when no match was found or the Array is empty.
+**Outputs**: One element of the array if something matches `spec()`, or the first element if no `spec()` is used. It will return null when no match was found or the Array is empty.
 
 **Example**: [first.js](examples/first.js)
 
