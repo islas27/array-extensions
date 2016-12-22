@@ -62,14 +62,14 @@ The each method will receive a callback function to execute on each element of t
 
 ----
 
-### skip
-**Sintax**: `myArray.()`
+### skip(howMany)
+**Sintax**: `myArray.skip(howMany)`
 
-**Inputs**:
+**Inputs**: `howMany`: indicates how many elements should be taken to form a new array.
 
-**Outputs**:
+**Outputs**: Array. If `howMany <= 0`, `skip()` will return the original array, while if bigger than the array, it will return an empty array.
 
-**Example**: [.js](examples/.js)
+**Example**: [skip.js](examples/skip.js)
 
 ----
 
