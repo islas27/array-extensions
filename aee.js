@@ -33,3 +33,13 @@ Array.prototype.select = function (spec) {
   }
   return result
 }
+
+Array.prototype.last = function (spec) {
+  const len = this.length
+  if (len === 0) return null
+  if (typeof spec !== 'function') return this[len - 1]
+  for (let i = len - 1; i >= 0; i -= 1) {
+    if (spec(this[i], i)) return this[i]
+  }
+  return null
+}
