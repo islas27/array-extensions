@@ -95,14 +95,14 @@ The each method will receive a callback function to execute on each element of t
 
 ----
 
-### count
+### count(spec)
 **Sintax**: `myArray.()`
 
-**Inputs**:
+**Inputs**: `spec`: a function that takes `element` & `index` as arguments, and returns true when the element matches the desired criteria.
 
-**Outputs**:
+**Outputs**: The number of elements that matched `spec()`. In case spec was not defined, it will return the length of the array by default.
 
-**Example**: [.js](examples/.js)
+**Example**: [count.js](examples/count.js)
 
 ----
 
