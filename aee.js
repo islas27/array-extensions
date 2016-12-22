@@ -52,3 +52,13 @@ Array.prototype.skip = function (howMany) {
   if (howMany >= len) return []
   return this.slice(howMany - len)
 }
+
+Array.prototype.first = function (spec) {
+  const len = this.length
+  if (len === 0) return null
+  if (typeof spec !== 'function') return this[0]
+  for (let i = 0; i < len; i += 1) {
+    if (spec(this[i], i)) return this[i]
+  }
+  return null
+}
