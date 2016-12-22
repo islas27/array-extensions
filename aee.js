@@ -33,3 +33,13 @@ Array.prototype.select = function (spec) {
   }
   return result
 }
+
+Array.prototype.count = function (spec) {
+  const len = this.length
+  let result = 0
+  if (typeof spec !== 'function') return len
+  for (let i = 0; i < len; i += 1) {
+    if (spec(this[i], i)) result += 1
+  }
+  return result
+}
