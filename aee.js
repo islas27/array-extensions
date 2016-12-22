@@ -34,6 +34,18 @@ Array.prototype.select = function (spec) {
   return result
 }
 
+Array.prototype.take = function (howMany, spec) {
+  const result = []
+  if (howMany <= 0) return result
+  if (typeof spec !== 'function') return this.slice(0, howMany)
+  const len = this.length
+  for (let i = 0; i < len; i += 1) {
+    if (spec(this[i], i)) result.push(this[i])
+    if (result.length === howMany) break
+  }
+  return result
+}
+
 Array.prototype.skip = function (howMany) {
   const len = this.length
   if (howMany <= 0) return this

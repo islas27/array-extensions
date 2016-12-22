@@ -51,14 +51,14 @@ The each method will receive a callback function to execute on each element of t
 
 ----
 
-### take
-**Sintax**: `myArray.()`
+### take(howMany, spec)
+**Sintax**: `myArray.take(howMany, spec)`
 
-**Inputs**:
+**Inputs**: `howMany`: indicates how many elements should be taken to form a new array; `spec`: a function that takes `element` & `index` as arguments, and returns true if the element matches a desired rule.
 
-**Outputs**:
+**Outputs**: Array: composed of the howMany-elements that matched `spec()` or the first howMany-elements of the original array if no `spec()` is sent. It could return less elements than `howMany` if the array length is less than it, or the number of elements that match `spec()` are not enough. In case `howMany =< 0` it will return an empty array, regardless of `spec()`.
 
-**Example**: [.js](examples/.js)
+**Example**: [take.js](examples/take.js)
 
 ----
 
