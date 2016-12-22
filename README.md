@@ -84,14 +84,14 @@ The each method will receive a callback function to execute on each element of t
 
 ----
 
-### last
-**Sintax**: `myArray.()`
+### last(spec)
+**Sintax**: `myArray.last(spec)`
 
-**Inputs**:
+**Inputs**: `spec`: a function that takes `element` & `index` as arguments, and returns true when the element matches the desired criteria.
 
-**Outputs**:
+**Outputs**: One element of the array if something matches `spec()`, or the last element if no `spec()` is used. It will return null when no match was found or the Array is empty.
 
-**Example**: [.js](examples/.js)
+**Example**: [last.js](examples/last.js)
 
 ----
 

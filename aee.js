@@ -63,6 +63,16 @@ Array.prototype.first = function (spec) {
   return null
 }
 
+Array.prototype.last = function (spec) {
+  const len = this.length
+  if (len === 0) return null
+  if (typeof spec !== 'function') return this[len - 1]
+  for (let i = len - 1; i >= 0; i -= 1) {
+    if (spec(this[i], i)) return this[i]
+  }
+  return null
+}
+
 Array.prototype.count = function (spec) {
   const len = this.length
   let result = 0
