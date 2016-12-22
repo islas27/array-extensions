@@ -96,7 +96,7 @@ The each method will receive a callback function to execute on each element of t
 ----
 
 ### count(spec)
-**Sintax**: `myArray.()`
+**Sintax**: `myArray.count(spec)`
 
 **Inputs**: `spec`: a function that takes `element` & `index` as arguments, and returns true when the element matches the desired criteria.
 
