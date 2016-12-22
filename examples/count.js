@@ -6,18 +6,14 @@ devs = [
     { 'name': 'Jonathan', 'age': 24, 'skills': ['JS', 'HTML/CSS', 'Gaming'] }
 ]
 
-console.log(devs.select(dev => dev.age))
+console.log(devs.count())
 // Output:
-// [21, 23, 26, 24]
+// 4
 
-console.log(devs.select(dev => dev.skills[0]))
+console.log(devs.count(dev => dev.age < 24))
 // Output:
-// ['C#', 'PHP', 'RoR', 'JS']
+// 2
 
-devs
-  .select(dev => dev.age)
-  .where(age => age < 24)
-  .each(age => console.log(age))
+console.log(devs.count(dev => dev.skills.any('JS')))
 // Output:
-// 21
-// 23
+// 2

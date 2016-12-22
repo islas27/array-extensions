@@ -34,6 +34,35 @@ Array.prototype.select = function (spec) {
   return result
 }
 
+Array.prototype.take = function (howMany, spec) {
+  const result = []
+  if (howMany <= 0) return result
+  if (typeof spec !== 'function') return this.slice(0, howMany)
+  const len = this.length
+  for (let i = 0; i < len; i += 1) {
+    if (spec(this[i], i)) result.push(this[i])
+    if (result.length === howMany) break
+  }
+  return result
+}
+
+Array.prototype.skip = function (howMany) {
+  const len = this.length
+  if (howMany <= 0) return this
+  if (howMany >= len) return []
+  return this.slice(howMany - len)
+}
+
+Array.prototype.first = function (spec) {
+  const len = this.length
+  if (len === 0) return null
+  if (typeof spec !== 'function') return this[0]
+  for (let i = 0; i < len; i += 1) {
+    if (spec(this[i], i)) return this[i]
+  }
+  return null
+}
+
 Array.prototype.last = function (spec) {
   const len = this.length
   if (len === 0) return null
@@ -42,4 +71,14 @@ Array.prototype.last = function (spec) {
     if (spec(this[i], i)) return this[i]
   }
   return null
+}
+
+Array.prototype.count = function (spec) {
+  const len = this.length
+  let result = 0
+  if (typeof spec !== 'function') return len
+  for (let i = 0; i < len; i += 1) {
+    if (spec(this[i], i)) result += 1
+  }
+  return result
 }

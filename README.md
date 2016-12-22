@@ -51,36 +51,36 @@ The each method will receive a callback function to execute on each element of t
 
 ----
 
-### take
-**Sintax**: `myArray.()`
+### take(howMany, spec)
+**Sintax**: `myArray.take(howMany, spec)`
 
-**Inputs**:
+**Inputs**: `howMany`: indicates how many elements should be taken to form a new array; `spec`: a function that takes `element` & `index` as arguments, and returns true if the element matches a desired rule.
 
-**Outputs**:
+**Outputs**: Array: composed of the howMany-elements that matched `spec()` or the first howMany-elements of the original array if no `spec()` is sent. It could return less elements than `howMany` if the array length is less than it, or the number of elements that match `spec()` are not enough. In case `howMany =< 0` it will return an empty array, regardless of `spec()`.
 
-**Example**: [.js](examples/.js)
-
-----
-
-### skip
-**Sintax**: `myArray.()`
-
-**Inputs**:
-
-**Outputs**:
-
-**Example**: [.js](examples/.js)
+**Example**: [take.js](examples/take.js)
 
 ----
 
-### first
-**Sintax**: `myArray.()`
+### skip(howMany)
+**Sintax**: `myArray.skip(howMany)`
 
-**Inputs**:
+**Inputs**: `howMany`: indicates how many elements should be taken to form a new array.
 
-**Outputs**:
+**Outputs**: Array. If `howMany <= 0`, `skip()` will return the original array, while if bigger than the array, it will return an empty array.
 
-**Example**: [.js](examples/.js)
+**Example**: [skip.js](examples/skip.js)
+
+----
+
+### first(spec)
+**Sintax**: `myArray.first(spec)`
+
+**Inputs**: `spec`: a function that takes `element` & `index` as arguments, and returns true when the element matches the desired criteria.
+
+**Outputs**: One element of the array if something matches `spec()`, or the first element if no `spec()` is used. It will return null when no match was found or the Array is empty.
+
+**Example**: [first.js](examples/first.js)
 
 ----
 
@@ -95,14 +95,14 @@ The each method will receive a callback function to execute on each element of t
 
 ----
 
-### count
-**Sintax**: `myArray.()`
+### count(spec)
+**Sintax**: `myArray.count(spec)`
 
-**Inputs**:
+**Inputs**: `spec`: a function that takes `element` & `index` as arguments, and returns true when the element matches the desired criteria.
 
-**Outputs**:
+**Outputs**: The number of elements that matched `spec()`. In case spec was not defined, it will return the length of the array by default.
 
-**Example**: [.js](examples/.js)
+**Example**: [count.js](examples/count.js)
 
 ----
 
