@@ -17,9 +17,11 @@ describe('#last', () => {
     expect(result).to.equal('juan')
   })
 
-  it('returns null if no element matches spec()', () => {
+  it('returns null if no element matches spec() or the array is empty', () => {
     expect(data.devs.last(dev => dev.skills.any('Ruby'))).to.be.null
     expect(data.people.last(person => person.age > 80)).to.be.null
+    expect([].last()).to.be.null
+    expect([].last(() => true)).to.be.null
   })
 
   it('calls spec() the least amount of times as possible', () => {
