@@ -72,3 +72,13 @@ Array.prototype.count = function (spec) {
   }
   return result
 }
+
+Array.prototype.pluck = function (property) {
+  if (property === undefined) return null
+  const len = this.length
+  let result = []
+  for (let i = 0; i < len; i += 1) {
+    result.push(this[i].hasOwnProperty(property) ? this[i][property] : null)
+  }
+  return result
+}
