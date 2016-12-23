@@ -106,14 +106,14 @@ The each method will receive a callback function to execute on each element of t
 
 ----
 
-### index
-**Sintax**: `myArray.()`
+### index(spec)
+**Sintax**: `myArray.index(spec)`
 
-**Inputs**:
+**Inputs**: `spec`: a function that takes `element` & `index` as arguments, and returns true when the element matches the desired criteria. It could also be a single value or an object to search in the array.
 
-**Outputs**:
+**Outputs**: The zero-based index of the first element matched to `spec`
 
-**Example**: [.js](examples/.js)
+**Example**: [index.js](examples/index.js)
 
 ----
 
