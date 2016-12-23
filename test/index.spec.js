@@ -4,6 +4,12 @@ const sinon = require('sinon')
 const data = require('./data')
 
 describe('#index', () => {
+  it('returns -1 when the array is empty', () => {
+    expect([].index(1)).to.equal(-1)
+    expect([].index({name: 'John', lastName: 'Doe'})).to.equal(-1)
+    expect([].index(element => element.someProperty)).to.equal(-1)
+  })
+
   it('returns -1 when no spec is sent', () => {
     expect(data.people.index()).to.be.equal(-1)
     expect(data.numbers.index()).to.be.equal(-1)
@@ -12,11 +18,11 @@ describe('#index', () => {
   it('returns the correct element when spec is a value or object', () => {
     expect(data.numbers.index(2)).to.equal(2)
     expect(data.letters.index('b')).to.equal(1)
-    expect(data.children.index({name: 'bany', sex: 'm'})).to.equal(5)
+    expect(data.children.index({'name': 'bany', 'sex': 'm'})).to.equal(5)
   })
 
   it('returns the correct index when using a function as spec', () => {
-    let specSpy = sinon.spy(child => child.sex === 'm' && child.name.length > 4)
+    let specSpy = sinon.spy(child => child.sex === 'm' && child.name.length > 5)
     let result = data.children.index(specSpy)
     expect(result).to.equal(8)
     expect(specSpy.callCount).to.equal(9)
@@ -31,9 +37,9 @@ describe('#index', () => {
   })
 
   it('sends the correct arguements to the function spec', () => {
-    let specSpy = sinon.spy(person => child.name.length === 6)
+    let specSpy = sinon.spy(person => person.name.length === 6)
     let result = data.people.index(specSpy)
-    expect(result.name).to.be.equal('Pancho')
+    expect(data.people[result].name).to.be.equal('Pancho')
     expect(specSpy.firstCall.calledWithExactly(data.people[0], 0)).to.be.true
     expect(specSpy.firstCall.returnValue).to.be.false
     expect(specSpy.lastCall.calledWithExactly(data.people[3], 3)).to.be.true

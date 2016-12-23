@@ -72,3 +72,14 @@ Array.prototype.count = function (spec) {
   }
   return result
 }
+
+Array.prototype.index = function (spec) {
+  const len = this.length
+  if (len === 0 || spec === undefined) return -1
+  let searchSpec = (typeof spec === 'function') ? spec
+     : value => JSON.stringify(value) === JSON.stringify(spec)
+  for (let i = 0; i < len; i += 1) {
+    if (searchSpec(this[i], i)) return i
+  }
+  return -1
+}
