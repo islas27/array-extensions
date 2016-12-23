@@ -47,5 +47,5 @@
     {"model": "Honda Civic", "year": "2016"},
     {"model": "Mitsubishi Lancer", "year": "2012", "owner": "Alex"}
   ],
-  "carOwners": ["John", "Gabriel", null, null]
+  "carOwners": ["John", "Gabriel", null, "Alex"]
 }
