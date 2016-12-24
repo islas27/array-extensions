@@ -86,9 +86,9 @@ Array.prototype.count = function (spec) {
 Array.prototype.sum = function (spec) {
   const len = this.length
   let sumSpec = (typeof spec === 'function') ? spec : spec => spec
-  let result = (!isNaN(sumSpec(this[0])) || this[0] === undefined) ? 0 : ''
+  let result = (!isNaN(sumSpec(this[0], 0)) || this[0] === undefined) ? 0 : ''
   for (let i = 0; i < len; i += 1) {
-    result += sumSpec(this[i])
+    result += sumSpec(this[i], i)
   }
   return result
 }

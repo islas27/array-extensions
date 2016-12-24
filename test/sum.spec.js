@@ -33,4 +33,13 @@ describe('#sum', () => {
       .sum(child => child.name)
     expect(result).to.equal('anafostojane')
   })
+
+  it('is capable of using index to do spec()', () => {
+    let specSpy = sinon.spy((letter, index) => (index % 2 === 0) ? letter : '')
+    let result = data.letters.sum(specSpy)
+    expect(result).to.equal('ac')
+    expect(specSpy.callCount).to.equal(4)
+    expect(specSpy.secondCall.calledWithExactly('a', 0)).to.be.true
+    expect(specSpy.lastCall.calledWithExactly('c', 2)).to.be.true
+  })
 })
