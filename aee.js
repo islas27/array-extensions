@@ -74,7 +74,7 @@ Array.prototype.count = function (spec) {
 }
 
 Array.prototype.pluck = function (property) {
-  if (property === undefined) return null
+  if (property === undefined) throw new ReferenceError('property is undefined')
   const len = this.length
   let result = []
   for (let i = 0; i < len; i += 1) {
