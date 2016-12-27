@@ -78,7 +78,7 @@ Array.prototype.pluck = function (property) {
   const len = this.length
   let result = []
   for (let i = 0; i < len; i += 1) {
-    result.push(this[i].hasOwnProperty(property) ? this[i][property] : null)
+    result.push(this[i] && this[i].hasOwnProperty(property) ? this[i][property] : null)
   }
   return result
 }
