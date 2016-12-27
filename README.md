@@ -150,14 +150,16 @@ The each method will receive a callback function to execute on each element of t
 
 ----
 
-### min
-**Sintax**: `myArray.()`
+### min(comparer)
+**Sintax**: `myArray.min(comparer)`
 
-**Inputs**:
+**Inputs**: `comparer`: a function that takes `a` & `b` as arguments, and returns a negative number when `b > a`, a positive number when `a > b`, and a 0 when `a === b`.
 
-**Outputs**:
+**Outputs**: An element of the array, the smaller one according to the comparer specified. If no `comparer` is sent, it will return the smaller number when the array holds only numbers, the alphabetically first string if the array holds strings and the first object if the array has objects (So it will not throw an error). It will return a null when the array is empty.
 
-**Example**: [.js](examples/.js)
+**Example**: [min.js](examples/max.js)
+
+**Notes**: The same notes as `max(comparer)` apply here.
 
 ----
 

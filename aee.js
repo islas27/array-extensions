@@ -82,3 +82,19 @@ Array.prototype.count = function (spec) {
   }
   return result
 }
+
+Array.prototype.min = function (comparer) {
+  const len = this.length
+  if (len === 0) return null
+  let result = this[0]
+  let comparerSpec = comparer
+  if (typeof comparerSpec !== 'function') {
+    comparerSpec = (!isNaN(this[0]) || this[0].constructor === Object)
+    ? (a, b) => a - b
+    : (a, b) => a.localeCompare(b)
+  }
+  for (let i = 1; i < len; i += 1) {
+    if (comparerSpec(result, this[i]) > 0) result = this[i]
+  }
+  return result
+}
