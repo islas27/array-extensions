@@ -26,6 +26,10 @@ describe('#min', () => {
     expect(data.randomLetters.min()).to.equal('b')
   })
 
+  it('throws a ReferenceError when the array is made of objects and no comparer is defined', () => {
+    expect(() => data.devs.min(), null, null).to.throw(ReferenceError)
+  })
+
   it('sends the correct arguments when using a comparer and the array contains numbers', () => {
     let comparerSpy = sinon.spy((elementA, elementB) => elementA - elementB)
     const result = data.randomNumbers.min(comparerSpy)
