@@ -89,7 +89,10 @@ Array.prototype.max = function (comparer) {
   let result = this[0]
   let comparerSpec = comparer
   if (typeof comparerSpec !== 'function') {
-    comparerSpec = (!isNaN(this[0]) || this[0].constructor === Object)
+    if (typeof result === 'object') {
+      throw new ReferenceError('comparer undefined')
+    }
+    comparerSpec = !isNaN(this[0])
     ? (a, b) => a - b
     : (a, b) => a.localeCompare(b)
   }

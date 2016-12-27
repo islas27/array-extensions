@@ -25,6 +25,10 @@ describe('#max', () => {
     expect(data.randomLetters.max()).to.equal('z')
   })
 
+  it('throws a ReferenceError when the array is made of objects and no comparer is defined', () => {
+    expect(() => data.devs.max(), null, null).to.throw(ReferenceError)
+  })
+
   it('sends the correct arguments when using a comparer and the array contains numbers', () => {
     let comparerSpy = sinon.spy((elementA, elementB) => elementA - elementB)
     const result = data.randomNumbers.max(comparerSpy)
