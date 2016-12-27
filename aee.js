@@ -82,3 +82,14 @@ Array.prototype.count = function (spec) {
   }
   return result
 }
+
+Array.prototype.flatten = function () {
+  let len = this.length
+  for (let i = 0; i < len; i += 1) {
+    if (Array.isArray(this[i])) {
+      len += this[i].length - 1
+      this.splice(i, 1, ...this[i])
+    }
+  }
+  return this
+}
