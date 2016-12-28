@@ -111,3 +111,22 @@ Array.prototype.max = function (comparer) {
   }
   return result
 }
+
+Array.prototype.min = function (comparer) {
+  const len = this.length
+  if (len === 0) return null
+  let result = this[0]
+  let comparerSpec = comparer
+  if (typeof comparerSpec !== 'function') {
+    if (typeof result === 'object') {
+      throw new ReferenceError('comparer undefined')
+    }
+    comparerSpec = !isNaN(this[0])
+    ? (a, b) => a - b
+    : (a, b) => a.localeCompare(b)
+  }
+  for (let i = 1; i < len; i += 1) {
+    if (comparerSpec(result, this[i]) > 0) result = this[i]
+  }
+  return result
+}
