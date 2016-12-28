@@ -139,14 +139,21 @@ The each method will receive a callback function to execute on each element of t
 
 ----
 
-### max
-**Sintax**: `myArray.()`
+### max(comparer)
+**Sintax**: `myArray.max(comparer)`
 
-**Inputs**:
+**Inputs**: `comparer`: a function that takes `a` & `b` as arguments, and returns a negative number when `b > a`, a positive number when `a > b`, and a 0 when `a === b`.
 
-**Outputs**:
+**Outputs**: An element of the array, that holds the maximum according to the comparer specified. If no `comparer` is sent, it will return the bigger number when the array holds only numbers, the alphabetically last string if the array holds strings and the first object if the array has objects (So it will not throw an error). It will return a null when the array is empty
 
-**Example**: [.js](examples/.js)
+**Example**: [max.js](examples/max.js)
+
+**Notes**: The default behaviour uses `a.localeCompare(b)` when the array contains strings and no comparer is defined. While there exists libraries that try to make the best comparer of strings, `localeCompare` was chosen to reduce the overhead of adding more libraries. Beware as this function is dependent on vendor implementation, which means every environment behaves differently (Mozilla Firefox, Google Chrome, Opera, Safari, etc.) on uncommon languages or symbols.
+
+Consult the following pages for more information on string comparation:
+- [[Sept 2008] Stack Overflow - How do you do string comparison in JavaScript?](http://stackoverflow.com/questions/51165/how-do-you-do-string-comparison-in-javascript)
+- [[Jan 2016] JSTips - Sorting strings with accented characters](http://www.jstips.co/en/sorting-strings-with-accented-characters/) (While it is not about comparators, it gives a few tips to write them)
+- [Mozilla Developer Network - String.prototype.localeCompare()](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/String/localeCompare)
 
 ----
 

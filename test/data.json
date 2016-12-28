@@ -41,5 +41,7 @@
     {"name": "bany", "sex": "m"},
     {"name": "rod", "sex": "m"},
     {"name": "martin", "sex": "m"}
-  ]
+  ],
+  "randomNumbers": [741, 3, 801, 510, 444, 492, 610, 429, 101, 713],
+  "randomLetters": ["b", "d", "b", "z", "m", "s", "t", "z", "e", "u"]
 }
