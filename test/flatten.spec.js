@@ -13,9 +13,14 @@ describe('#flatten', () => {
     expect(['a']).to.eql(['a'])
   })
 
-  it('returns the correct answer', () => {
+  it('keeps the original array unmodified, returning a \'new\' copy', () => {
     expect(data.unflattenedArrayNumbersS.flatten()).to.eql(data.flattenedArrayNumbersS)
+    expect(data.unflattenedArrayNumbersS.length).to.equal(4)
     expect(data.unflattenedArrayNumbersL.flatten()).to.eql(data.flattenedArrayNumbersL)
+    expect(data.unflattenedArrayLettersS.length).to.equal(6)
+  })
+
+  it('returns the correct answer in more complex arrays', () => {
     expect(data.unflattenedArrayLettersS.flatten()).to.eql(data.flattenedArrayLettersS)
     expect(data.unflattenedArrayLettersL.flatten()).to.eql(data.flattenedArrayLettersL)
   })

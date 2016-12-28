@@ -143,12 +143,13 @@ Array.prototype.min = function (comparer) {
 }
 
 Array.prototype.flatten = function () {
-  let len = this.length
+  let copy = this.slice()
+  let len = copy.length
   for (let i = 0; i < len; i += 1) {
-    if (Array.isArray(this[i])) {
-      len += this[i].length - 1
-      this.splice(i, 1, ...this[i])
+    if (Array.isArray(copy[i])) {
+      len += copy[i].length - 1
+      copy.splice(i, 1, ...copy[i])
     }
   }
-  return this
+  return copy
 }
