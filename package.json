@@ -1,6 +1,6 @@
 {
   "name": "array-ext-exercise",
-  "version": "1.0.0",
+  "version": "0.7.0",
   "description": "Extending the Array prototype in JS",
   "main": "aee.js",
   "scripts": {
@@ -12,7 +12,8 @@
   },
   "keywords": [
     "exercise",
-    "learning"
+    "learning",
+    "arrays"
   ],
   "author": "Jonathan Islas",
   "license": "MIT",
