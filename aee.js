@@ -83,6 +83,17 @@ Array.prototype.count = function (spec) {
   return result
 }
 
+Array.prototype.pluck = function (property) {
+  if (property === undefined) throw new ReferenceError('property is undefined')
+  const len = this.length
+  let result = []
+  for (let i = 0; i < len; i += 1) {
+    let value = this[i]
+    result.push(value && value[property] ? value[property] : null)
+  }
+  return result
+}
+
 Array.prototype.sum = function (spec) {
   const len = this.length
   let sumSpec = (typeof spec === 'function') ? spec : value => value

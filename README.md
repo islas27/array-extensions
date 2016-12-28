@@ -117,14 +117,14 @@ The each method will receive a callback function to execute on each element of t
 
 ----
 
-### pluck
-**Sintax**: `myArray.()`
+### pluck(property)
+**Sintax**: `myArray.pluck(property)`
 
-**Inputs**:
+**Inputs**: `property`, a string containing the name of the property to substract from every element in the array
 
-**Outputs**:
+**Outputs**: Array, containing all the element's selected property. The array will contain `null` values where the property selected was not found or an element was null or undefined.
 
-**Example**: [.js](examples/.js)
+**Example**: [pluck.js](examples/pluck.js)
 
 ----
 
