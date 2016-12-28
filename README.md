@@ -84,14 +84,14 @@ The each method will receive a callback function to execute on each element of t
 
 ----
 
-### last
-**Sintax**: `myArray.()`
+### last(spec)
+**Sintax**: `myArray.last(spec)`
 
-**Inputs**:
+**Inputs**: `spec`: a function that takes `element` & `index` as arguments, and returns true when the element matches the desired criteria.
 
-**Outputs**:
+**Outputs**: One element of the array if something matches `spec()`, or the last element if no `spec()` is used. It will return null when no match was found or the Array is empty.
 
-**Example**: [.js](examples/.js)
+**Example**: [last.js](examples/last.js)
 
 ----
 
@@ -117,55 +117,62 @@ The each method will receive a callback function to execute on each element of t
 
 ----
 
-### pluck
-**Sintax**: `myArray.()`
+### pluck(property)
+**Sintax**: `myArray.pluck(property)`
 
-**Inputs**:
+**Inputs**: `property`, a string containing the name of the property to substract from every element in the array
 
-**Outputs**:
+**Outputs**: Array, containing all the element's selected property. The array will contain `null` values where the property selected was not found or an element was null or undefined.
 
-**Example**: [.js](examples/.js)
-
-----
-
-### sum
-**Sintax**: `myArray.()`
-
-**Inputs**:
-
-**Outputs**:
-
-**Example**: [.js](examples/.js)
+**Example**: [pluck.js](examples/pluck.js)
 
 ----
 
-### max
-**Sintax**: `myArray.()`
+### sum(spec)
+**Sintax**: `myArray.sum(spec)`
 
-**Inputs**:
+**Inputs**: `spec`: a function that takes `element` & `index` as arguments, and returns a value to be added to the final result.
 
-**Outputs**:
+**Outputs**: Number or String, depending on what was selected to add.
 
-**Example**: [.js](examples/.js)
-
-----
-
-### min
-**Sintax**: `myArray.()`
-
-**Inputs**:
-
-**Outputs**:
-
-**Example**: [.js](examples/.js)
+**Example**: [sum.js](examples/sum.js)
 
 ----
 
-### flatten
-**Sintax**: `myArray.()`
+### max(comparer)
+**Sintax**: `myArray.max(comparer)`
 
-**Inputs**:
+**Inputs**: `comparer`: a function that takes `a` & `b` as arguments, and returns a negative number when `b > a`, a positive number when `a > b`, and a 0 when `a === b`.
 
-**Outputs**:
+**Outputs**: An element of the array, that holds the maximum according to the comparer specified. If no `comparer` is sent, it will return the bigger number when the array holds only numbers, the alphabetically last string if the array holds strings and the first object if the array has objects (So it will not throw an error). It will return a null when the array is empty
 
-**Example**: [.js](examples/.js)
+**Example**: [max.js](examples/max.js)
+
+**Notes**: The default behaviour uses `a.localeCompare(b)` when the array contains strings and no comparer is defined. While there exists libraries that try to make the best comparer of strings, `localeCompare` was chosen to reduce the overhead of adding more libraries. Beware as this function is dependent on vendor implementation, which means every environment behaves differently (Mozilla Firefox, Google Chrome, Opera, Safari, etc.) on uncommon languages or symbols.
+
+Consult the following pages for more information on string comparation:
+- [[Sept 2008] Stack Overflow - How do you do string comparison in JavaScript?](http://stackoverflow.com/questions/51165/how-do-you-do-string-comparison-in-javascript)
+- [[Jan 2016] JSTips - Sorting strings with accented characters](http://www.jstips.co/en/sorting-strings-with-accented-characters/) (While it is not about comparators, it gives a few tips to write them)
+- [Mozilla Developer Network - String.prototype.localeCompare()](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/String/localeCompare)
+
+----
+
+### min(comparer)
+**Sintax**: `myArray.min(comparer)`
+
+**Inputs**: `comparer`: a function that takes `a` & `b` as arguments, and returns a negative number when `b > a`, a positive number when `a > b`, and a 0 when `a === b`.
+
+**Outputs**: An element of the array, the smaller one according to the comparer specified. If no `comparer` is sent, it will return the smaller number when the array holds only numbers, the alphabetically first string if the array holds strings and the first object if the array has objects (So it will not throw an error). It will return a null when the array is empty.
+
+**Example**: [min.js](examples/max.js)
+
+**Notes**: The same notes as `max(comparer)` apply here.
+
+----
+
+### flatten()
+**Sintax**: `myArray.flatten()`
+
+**Outputs**: A flattened array, when elements of the original array are arrays too. If not, it will return the original array. In case it is applied on an empty array, it will return an empty array too.
+
+**Example**: [flatten.js](examples/flatten.js)
