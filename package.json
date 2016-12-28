@@ -1,6 +1,6 @@
 {
-  "name": "array-ext-exercise",
-  "version": "1.0.0",
+  "name": "array-extensions",
+  "version": "0.7.1",
   "description": "Extending the Array prototype in JS",
   "main": "aee.js",
   "scripts": {
@@ -12,7 +12,8 @@
   },
   "keywords": [
     "exercise",
-    "learning"
+    "learning",
+    "arrays"
   ],
   "author": "Jonathan Islas",
   "license": "MIT",
@@ -25,6 +26,7 @@
     "eslint": "^3.12.1",
     "eslint-config-standard": "^6.2.1",
     "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-promise": "^3.4.0",
     "eslint-plugin-standard": "^2.0.1",
     "mocha": "^3.2.0",
     "sinon": "^1.17.6"
