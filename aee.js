@@ -63,6 +63,16 @@ Array.prototype.first = function (spec) {
   return null
 }
 
+Array.prototype.last = function (spec) {
+  const len = this.length
+  if (len === 0) return null
+  if (typeof spec !== 'function') return this[len - 1]
+  for (let i = len - 1; i >= 0; i -= 1) {
+    if (spec(this[i], i)) return this[i]
+  }
+  return null
+}
+
 Array.prototype.count = function (spec) {
   const len = this.length
   let result = 0
@@ -79,6 +89,54 @@ Array.prototype.pluck = function (property) {
   let result = []
   for (let i = 0; i < len; i += 1) {
     result.push(this[i] && this[i].hasOwnProperty(property) ? this[i][property] : null)
+  }
+  return result
+}
+
+Array.prototype.sum = function (spec) {
+  const len = this.length
+  let sumSpec = (typeof spec === 'function') ? spec : value => value
+  let result = (!isNaN(sumSpec(this[0], 0)) || this[0] === undefined) ? 0 : ''
+  for (let i = 0; i < len; i += 1) {
+    result += sumSpec(this[i], i)
+  }
+  return result
+}
+
+Array.prototype.max = function (comparer) {
+  const len = this.length
+  if (len === 0) return null
+  let result = this[0]
+  let comparerSpec = comparer
+  if (typeof comparerSpec !== 'function') {
+    if (typeof result === 'object') {
+      throw new ReferenceError('comparer undefined')
+    }
+    comparerSpec = !isNaN(this[0])
+    ? (a, b) => a - b
+    : (a, b) => a.localeCompare(b)
+  }
+  for (let i = 1; i < len; i += 1) {
+    if (comparerSpec(result, this[i]) < 0) result = this[i]
+  }
+  return result
+}
+
+Array.prototype.min = function (comparer) {
+  const len = this.length
+  if (len === 0) return null
+  let result = this[0]
+  let comparerSpec = comparer
+  if (typeof comparerSpec !== 'function') {
+    if (typeof result === 'object') {
+      throw new ReferenceError('comparer undefined')
+    }
+    comparerSpec = !isNaN(this[0])
+    ? (a, b) => a - b
+    : (a, b) => a.localeCompare(b)
+  }
+  for (let i = 1; i < len; i += 1) {
+    if (comparerSpec(result, this[i]) > 0) result = this[i]
   }
   return result
 }
