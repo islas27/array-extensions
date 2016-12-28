@@ -141,3 +141,15 @@ Array.prototype.min = function (comparer) {
   }
   return result
 }
+
+Array.prototype.flatten = function () {
+  let result = this.slice()
+  let len = result.length
+  for (let i = 0; i < len; i += 1) {
+    if (Array.isArray(result[i])) {
+      len += result[i].length - 1
+      result.splice(i, 1, ...result[i])
+    }
+  }
+  return result
+}

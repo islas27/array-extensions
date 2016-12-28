@@ -170,11 +170,9 @@ Consult the following pages for more information on string comparation:
 
 ----
 
-### flatten
-**Sintax**: `myArray.()`
+### flatten()
+**Sintax**: `myArray.flatten()`
 
-**Inputs**:
+**Outputs**: A flattened array, when elements of the original array are arrays too. If not, it will return the original array. In case it is applied on an empty array, it will return an empty array too.
 
-**Outputs**:
-
-**Example**: [.js](examples/.js)
+**Example**: [flatten.js](examples/flatten.js)
