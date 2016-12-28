@@ -1,4 +1,4 @@
-# Array extension exercise [![Build Status](https://travis-ci.org/islas27/array-ext-exercise.svg?branch=dev)](https://travis-ci.org/islas27/array-ext-exercise)
+# Array extensions [![Build Status](https://travis-ci.org/islas27/array-extensions.svg?branch=master)](https://travis-ci.org/islas27/array-extensions)
 A set of methods that extend the Array prototype in JavaScript.
 
 Examples of each method can be found in the `examples` folder with a comment of the expected output, and can be executed with node in any terminal: `node examples/[method-name].js`
@@ -176,3 +176,5 @@ Consult the following pages for more information on string comparation:
 **Outputs**: A flattened array, when elements of the original array are arrays too. If not, it will return the original array. In case it is applied on an empty array, it will return an empty array too.
 
 **Example**: [flatten.js](examples/flatten.js)
+
+----

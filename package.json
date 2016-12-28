@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/islas27/array-ext-exercise.git"
+    "url": "git+https://github.com/islas27/array-extensions.git"
   },
   "keywords": [
     "exercise",
@@ -18,9 +18,9 @@
   "author": "Jonathan Islas",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/islas27/array-ext-exercise/issues"
+    "url": "https://github.com/islas27/array-extensions/issues"
   },
-  "homepage": "https://github.com/islas27/array-ext-exercise#readme",
+  "homepage": "https://github.com/islas27/array-extensions#readme",
   "devDependencies": {
     "chai": "^3.5.0",
     "eslint": "^3.12.1",
