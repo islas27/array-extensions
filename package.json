@@ -1,6 +1,6 @@
 {
   "name": "array-extensions",
-  "version": "0.7.1",
+  "version": "1.0.0",
   "description": "Extending the Array prototype in JS",
   "main": "aee.js",
   "scripts": {
