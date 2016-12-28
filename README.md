@@ -122,7 +122,7 @@ The each method will receive a callback function to execute on each element of t
 
 **Inputs**: `property`, a string containing the name of the property to substract from every element in the array
 
-**Outputs**: Array, containing all the element's selected property. The array will contain `null` values where the property selected was not found.
+**Outputs**: Array, containing all the element's selected property. The array will contain `null` values where the property selected was not found or an element was null or undefined.
 
 **Example**: [pluck.js](examples/pluck.js)
 
