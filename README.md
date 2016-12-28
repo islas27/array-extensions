@@ -128,14 +128,14 @@ The each method will receive a callback function to execute on each element of t
 
 ----
 
-### sum
-**Sintax**: `myArray.()`
+### sum(spec)
+**Sintax**: `myArray.sum(spec)`
 
-**Inputs**:
+**Inputs**: `spec`: a function that takes `element` & `index` as arguments, and returns a value to be added to the final result.
 
-**Outputs**:
+**Outputs**: Number or String, depending on what was selected to add.
 
-**Example**: [.js](examples/.js)
+**Example**: [sum.js](examples/sum.js)
 
 ----
 

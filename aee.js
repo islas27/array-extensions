@@ -83,6 +83,16 @@ Array.prototype.count = function (spec) {
   return result
 }
 
+Array.prototype.sum = function (spec) {
+  const len = this.length
+  let sumSpec = (typeof spec === 'function') ? spec : value => value
+  let result = (!isNaN(sumSpec(this[0], 0)) || this[0] === undefined) ? 0 : ''
+  for (let i = 0; i < len; i += 1) {
+    result += sumSpec(this[i], i)
+  }
+  return result
+}
+
 Array.prototype.max = function (comparer) {
   const len = this.length
   if (len === 0) return null
